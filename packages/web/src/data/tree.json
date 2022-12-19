@@ -1,0 +1,239 @@
+[
+	{
+		"name": "App",
+		"children": [
+			{ "name": "AngledHeader", "children": [] },
+			{
+				"name": "Switch",
+				"children": [
+					{
+						"name": "HomePage",
+						"children": [
+							{
+								"name": "AngledSection",
+								"children": [
+									{
+										"name": "DoneAndPrograms",
+										"children": [
+											{ "name": "img", "children": [] },
+											{ "name": "h1", "children": [] },
+											{ "name": "h1", "children": [] }
+										]
+									},
+									{
+										"name": "ProjectsCarousel",
+										"children": [
+											{
+												"name": "ProjectsCarouselWrapper",
+												"children": [
+													{
+														"name": "h1",
+														"children": []
+													},
+													{
+														"name": "ImageCarousel",
+														"children": [
+															{
+																"name": "SelectAndOption",
+																"children": [
+																	{
+																		"name": "img",
+																		"children": []
+																	},
+																	{
+																		"name": "Caption",
+																		"children": []
+																	}
+																]
+															},
+															{
+																"name": "ImageThumbnails",
+																"children": []
+															}
+														]
+													}
+												]
+											},
+											{
+												"name": "LinkButton",
+												"children": []
+											}
+										]
+									},
+									{ "name": "h1", "children": [] }
+								]
+							},
+							{
+								"name": "AngledSection",
+								"children": [
+									{
+										"name": "DoneAndPrograms",
+										"children": [
+											{ "name": "img", "children": [] },
+											{ "name": "h1", "children": [] },
+											{ "name": "h1", "children": [] }
+										]
+									},
+									{
+										"name": "ProjectsCarousel",
+										"children": [
+											{
+												"name": "ProjectsCarouselWrapper",
+												"children": [
+													{
+														"name": "h1",
+														"children": []
+													},
+													{
+														"name": "ImageCarousel",
+														"children": [
+															{
+																"name": "SelectAndOption",
+																"children": [
+																	{
+																		"name": "img",
+																		"children": []
+																	},
+																	{
+																		"name": "Caption",
+																		"children": []
+																	}
+																]
+															},
+															{
+																"name": "ImageThumbnails",
+																"children": []
+															}
+														]
+													}
+												]
+											},
+											{
+												"name": "LinkButton",
+												"children": []
+											}
+										]
+									},
+									{ "name": "h1", "children": [] }
+								]
+							},
+							{
+								"name": "AngledSection",
+								"children": [
+									{
+										"name": "DoneAndPrograms",
+										"children": [
+											{ "name": "img", "children": [] },
+											{ "name": "h1", "children": [] },
+											{ "name": "h1", "children": [] }
+										]
+									},
+									{
+										"name": "ProjectsCarousel",
+										"children": [
+											{
+												"name": "ProjectsCarouselWrapper",
+												"children": [
+													{
+														"name": "h1",
+														"children": []
+													},
+													{
+														"name": "ImageCarousel",
+														"children": [
+															{
+																"name": "SelectAndOption",
+																"children": [
+																	{
+																		"name": "img",
+																		"children": []
+																	},
+																	{
+																		"name": "Caption",
+																		"children": []
+																	}
+																]
+															},
+															{
+																"name": "ImageThumbnails",
+																"children": []
+															}
+														]
+													}
+												]
+											},
+											{
+												"name": "LinkButton",
+												"children": []
+											}
+										]
+									},
+									{ "name": "h1", "children": [] }
+								]
+							}
+						]
+					},
+					{
+						"name": "ProjectsPage",
+						"children": [
+							{
+								"name": "AngledSection",
+								"children": [
+									{
+										"name": "DoneAndPrograms",
+										"children": [
+											{ "name": "img", "children": [] },
+											{ "name": "h1", "children": [] },
+											{ "name": "h1", "children": [] }
+										]
+									},
+									{
+										"name": "ProjectsCarousel",
+										"children": [
+											{
+												"name": "ProjectsCarouselWrapper",
+												"children": [
+													{
+														"name": "h1",
+														"children": []
+													},
+													{
+														"name": "ImageCarousel",
+														"children": [
+															{
+																"name": "SelectAndOption",
+																"children": [
+																	{
+																		"name": "img",
+																		"children": []
+																	},
+																	{
+																		"name": "Caption",
+																		"children": []
+																	}
+																]
+															},
+															{
+																"name": "ImageThumbnails",
+																"children": []
+															}
+														]
+													}
+												]
+											},
+											{
+												"name": "LinkButton",
+												"children": []
+											}
+										]
+									},
+									{ "name": "h1", "children": [] }
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+]
