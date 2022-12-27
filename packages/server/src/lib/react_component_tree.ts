@@ -144,27 +144,35 @@ export default class ReactComponentTree implements IReactComponentTree {
 		if (!this.reactComponents) {
 			await this.getReactComponents();
 		}
-		console.log("react components: ", this.reactComponents);
 		const rootNodes = new Set<string>();
 		const treeNodes = new Map<string, ITreeNode>();
 		if (this.reactComponents) {
+            // recorremos todos los componentes padres con sus hijos
+            // que identificamos
 			for (const [
 				parentComponent,
 				childComponents,
 			] of this.reactComponents.entries()) {
-				console.log(parentComponent, childComponents);
 				if (!treeNodes.has(parentComponent)) {
+                    // si el componente padre no fue agregado previamente al arbol,
+                    // este se agrega como si fuera nodo raiz
 					rootNodes.add(parentComponent);
 				}
 				if (treeNodes.has(parentComponent)) {
+                    // si el componente padre fue agregado previamente al arbol,
+                    // se agregan los componentes hijos al nodo en el arbol
 					const mutable = treeNodes.get(parentComponent);
 					if (mutable?.children) {
 						mutable.children = childComponents.map(
 							(childComponent) => {
 								if (rootNodes.has(childComponent)) {
+                                    // si el hijo fue agregado como nodo raiz,
+                                    // se elimina porque es hijo de otro nodo
 									rootNodes.delete(childComponent);
 								}
 								if (treeNodes.has(childComponent)) {
+                                    // si el componente hijo ya fue agregado al arbol
+                                    // se retorna ese nodo
 									return (
 										treeNodes.get(childComponent) ?? {
 											name: childComponent,
@@ -172,14 +180,11 @@ export default class ReactComponentTree implements IReactComponentTree {
 										}
 									);
 								}
+                                // sino se crea un nuevo nodo y se agrega como hijo
 								treeNodes.set(childComponent, {
 									name: childComponent,
 									children: [],
 								});
-								// return {
-								// 	name: childComponent,
-								// 	children: [],
-								// };
 								return (
 									treeNodes.get(childComponent) ?? {
 										name: childComponent,
@@ -190,13 +195,19 @@ export default class ReactComponentTree implements IReactComponentTree {
 						);
 					}
 				} else {
+                    // si el componente padre no fue agregado previamente al arbol,
+                    // se agrega el componente padre al arbol
 					treeNodes.set(parentComponent, {
 						name: parentComponent,
 						children: childComponents.map((childComponent) => {
 							if (rootNodes.has(childComponent)) {
+                                // si el hijo fue agregado como nodo raiz,
+                                // se elimina porque es hijo de otro nodo
 								rootNodes.delete(childComponent);
 							}
 							if (treeNodes.has(childComponent)) {
+                                // si el componente hijo ya fue agregado al arbol
+                                // se retorna ese nodo
 								return (
 									treeNodes.get(childComponent) ?? {
 										name: childComponent,
@@ -204,14 +215,11 @@ export default class ReactComponentTree implements IReactComponentTree {
 									}
 								);
 							}
+                            // sino se crea un nuevo nodo y se agrega como hijo
 							treeNodes.set(childComponent, {
 								name: childComponent,
 								children: [],
 							});
-							// return {
-							// 	name: childComponent,
-							// 	children: [],
-							// };
 							return (
 								treeNodes.get(childComponent) ?? {
 									name: childComponent,
@@ -223,6 +231,8 @@ export default class ReactComponentTree implements IReactComponentTree {
 				}
 			}
 		}
+        
+        // agregamos los nodos raices
 		let roots: ITreeNode[] = [];
 		for (const [componentName] of rootNodes.entries()) {
 			roots = roots.concat(
